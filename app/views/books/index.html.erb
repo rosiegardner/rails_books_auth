@@ -1,0 +1,14 @@
+<h1>Books</h1>
+
+<% if @books.any? %>
+  <ul>
+    <% @books.each do |b| %>
+      <li><%= link_to b.name, book_path(book) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no books yet.</p>
+<% end %>
+
+
+<p><%= link_to "Create new book", new_book_path %></p>
